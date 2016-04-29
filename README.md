@@ -1,0 +1,2 @@
+# xpshoplite
+a Sponge plugin
