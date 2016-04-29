@@ -36,26 +36,26 @@ public class useevent
 			final Vector3i position = event.getTargetBlock().getPosition();
 			final String World = event.getTargetBlock().getLocation().get().getExtent().getName();
 			final String NodeName = World.concat(String.valueOf(position.getX()).concat(String.valueOf(position.getY()).concat(String.valueOf(position.getZ()))));
-			if (this.config.getNode("XPslight", "signs").getChildrenMap().containsKey(NodeName))
+			if (this.config.getNode("XPslite", "signs").getChildrenMap().containsKey(NodeName))
 			{
-				final int signX = this.config.getNode("XPslight", "signs", NodeName, "X").getInt();
-				final int signY = this.config.getNode("XPslight", "signs", NodeName, "Y").getInt();
-				final int signZ = this.config.getNode("XPslight", "signs", NodeName, "Z").getInt();
+				final int signX = this.config.getNode("XPslite", "signs", NodeName, "X").getInt();
+				final int signY = this.config.getNode("XPslite", "signs", NodeName, "Y").getInt();
+				final int signZ = this.config.getNode("XPslite", "signs", NodeName, "Z").getInt();
 
 				final Vector3i SignPosition = new Vector3i(signX, signY, signZ);
 				if (position.equals(SignPosition))
 				{
-					final String SignWorld = this.config.getNode("XPslight", "signs", NodeName, "world").getString();
+					final String SignWorld = this.config.getNode("XPslite", "signs", NodeName, "world").getString();
 					if (World.equals(SignWorld))
 					{
 						if (service.hasAccount(player.getUniqueId()))
 						{
 							final Account PlayerAccount = service.getOrCreateAccount(player.getUniqueId()).get();
-							final Double WithdrawAmount = this.config.getNode("XPslight", "signs", NodeName, "buyprice").getDouble();
+							final Double WithdrawAmount = this.config.getNode("XPslite", "signs", NodeName, "buyprice").getDouble();
 							final BigDecimal amount = BigDecimal.valueOf(WithdrawAmount);
 							PlayerAccount.withdraw(service.getDefaultCurrency(),amount, Cause.of(NamedCause.owner(player)));
 							int level = player.get(Keys.EXPERIENCE_LEVEL).get();
-							level += this.config.getNode("XPslight", "signs", NodeName, "xplevel").getInt();
+							level += this.config.getNode("XPslite", "signs", NodeName, "xplevel").getInt();
 							player.offer(Keys.EXPERIENCE_LEVEL, level);
 							player.sendMessage(Text.of("Actual balance: " + PlayerAccount.getBalance(service.getDefaultCurrency()).toPlainString()));
 						}
@@ -79,29 +79,29 @@ public class useevent
 			final Vector3i position = event.getTargetBlock().getPosition();
 			final String World = event.getTargetBlock().getLocation().get().getExtent().getName();
 			final String NodeName = World.concat(String.valueOf(position.getX()).concat(String.valueOf(position.getY()).concat(String.valueOf(position.getZ()))));
-			if (this.config.getNode("XPslight", "signs").getChildrenMap().containsKey(NodeName))
+			if (this.config.getNode("XPslite", "signs").getChildrenMap().containsKey(NodeName))
 			{
-				final int signX = this.config.getNode("XPslight", "signs", NodeName, "X").getInt();
-				final int signY = this.config.getNode("XPslight", "signs", NodeName, "Y").getInt();
-				final int signZ = this.config.getNode("XPslight", "signs", NodeName, "Z").getInt();
+				final int signX = this.config.getNode("XPslite", "signs", NodeName, "X").getInt();
+				final int signY = this.config.getNode("XPslite", "signs", NodeName, "Y").getInt();
+				final int signZ = this.config.getNode("XPslite", "signs", NodeName, "Z").getInt();
 
 				final Vector3i SignPosition = new Vector3i(signX, signY, signZ);
 				if (position.equals(SignPosition))
 				{
-					final String SignWorld = this.config.getNode("XPslight", "signs", NodeName, "world").getString();
+					final String SignWorld = this.config.getNode("XPslite", "signs", NodeName, "world").getString();
 					if (World.equals(SignWorld))
 					{
 						if (service.hasAccount(player.getUniqueId()))
 						{
 							int level = player.get(Keys.EXPERIENCE_LEVEL).get();
-							final int xplevel = this.config.getNode("XPslight", "signs", NodeName, "xplevel").getInt();
+							final int xplevel = this.config.getNode("XPslite", "signs", NodeName, "xplevel").getInt();
 							if (level >= xplevel)
 							{
 								final Account PlayerAccount = service.getOrCreateAccount(player.getUniqueId()).get();
-								final Double WithdrawAmount = this.config.getNode("XPslight", "signs", NodeName, "sellprice").getDouble();
+								final Double WithdrawAmount = this.config.getNode("XPslite", "signs", NodeName, "sellprice").getDouble();
 								final BigDecimal amount = BigDecimal.valueOf(WithdrawAmount);
 								PlayerAccount.deposit(service.getDefaultCurrency(),amount, Cause.of(NamedCause.owner(player)));
-								level -= this.config.getNode("XPslight", "signs", NodeName, "xplevel").getInt();
+								level -= this.config.getNode("XPslite", "signs", NodeName, "xplevel").getInt();
 								player.offer(Keys.EXPERIENCE_LEVEL, level);
 								player.sendMessage(Text.of("Actual balance: " + PlayerAccount.getBalance(service.getDefaultCurrency()).toPlainString()));
 							}
@@ -129,7 +129,7 @@ public class useevent
 			final Vector3i position = transaction.getDefault().getPosition();
 			final String World = transaction.getDefault().getLocation().get().getExtent().getName();
 			final String NodeName = World.concat(String.valueOf(position.getX()).concat(String.valueOf(position.getY()).concat(String.valueOf(position.getZ()))));
-			if (this.config.getNode("XPslight", "signs").getChildrenMap().containsKey(NodeName))
+			if (this.config.getNode("XPslite", "signs").getChildrenMap().containsKey(NodeName))
 			{
 				if (!player.hasPermission("xpshoplite.break"))
 				{
@@ -137,7 +137,7 @@ public class useevent
 				}
 				else
 				{
-					this.config.getNode("XPslight", "signs").removeChild(NodeName);
+					this.config.getNode("XPslite", "signs").removeChild(NodeName);
 					xpshoplite.plugin.save();
 				}
 			}

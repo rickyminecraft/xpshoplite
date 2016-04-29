@@ -28,7 +28,7 @@ import ninja.leaping.configurate.ConfigurationNode;
 import ninja.leaping.configurate.commented.CommentedConfigurationNode;
 import ninja.leaping.configurate.loader.ConfigurationLoader;
 
-@Plugin(id = "com.ricky30.xpshop", name = "xpshop", version = "1.0")
+@Plugin(id = "com.ricky30.xpshoplite", name = "xpshoplite", version = "1.0")
 public class xpshoplite
 {
 	private EconomyService service = null;
@@ -94,7 +94,7 @@ public class xpshoplite
 				.build());
 
 		final CommandSpec movingobjectcommand = CommandSpec.builder()
-				.description(Text.of("Explain use of Xpshop lite"))
+				.description(Text.of("How to use Xpshop lite"))
 				.executor(new commandXpshop())
 				.children(subcommands)
 				.build();

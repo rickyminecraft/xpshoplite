@@ -21,10 +21,11 @@ public class commandXpshop implements CommandExecutor
 		src.sendMessage(Text.of("3: -price for selling xp level-"));
 		src.sendMessage(Text.of("4: -amount of xp level to buy or sell-"));
 		src.sendMessage(Text.of("--------------------"));
-		src.sendMessage(Text.of("if you left click you buy Xp"));
-		src.sendMessage(Text.of("if you right click you sell Xp"));
+		src.sendMessage(Text.of("If you left click you buy Xp"));
+		src.sendMessage(Text.of("If you right click you sell Xp"));
 		src.sendMessage(Text.of("--------------------"));
-		src.sendMessage(Text.of("command :"));
+		src.sendMessage(Text.of("Commands :"));
+		src.sendMessage(Text.of(""));
 		src.sendMessage(Text.of("xpshoplite"));
 		src.sendMessage(Text.of("xpshoplite reload"));
 		

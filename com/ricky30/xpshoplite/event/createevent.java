@@ -46,13 +46,13 @@ public class createevent
 				Xplevelnumber = Integer.parseInt(text.get(3).get().toPlain());
 			}
 			final String NodeName = world.getName().concat(String.valueOf(position.getX()).concat(String.valueOf(position.getY()).concat(String.valueOf(position.getZ()))));
-			this.config.getNode("XPslight", "signs", NodeName, "X").setValue(position.getX());
-			this.config.getNode("XPslight", "signs", NodeName, "Y").setValue(position.getY());
-			this.config.getNode("XPslight", "signs", NodeName, "Z").setValue(position.getZ());
-			this.config.getNode("XPslight", "signs", NodeName, "world").setValue(world.getName());
-			this.config.getNode("XPslight", "signs", NodeName, "buyprice").setValue(BuyPrice);
-			this.config.getNode("XPslight", "signs", NodeName, "sellprice").setValue(SellPrice);
-			this.config.getNode("XPslight", "signs", NodeName, "xplevel").setValue(Xplevelnumber);
+			this.config.getNode("XPslite", "signs", NodeName, "X").setValue(position.getX());
+			this.config.getNode("XPslite", "signs", NodeName, "Y").setValue(position.getY());
+			this.config.getNode("XPslite", "signs", NodeName, "Z").setValue(position.getZ());
+			this.config.getNode("XPslite", "signs", NodeName, "world").setValue(world.getName());
+			this.config.getNode("XPslite", "signs", NodeName, "buyprice").setValue(BuyPrice);
+			this.config.getNode("XPslite", "signs", NodeName, "sellprice").setValue(SellPrice);
+			this.config.getNode("XPslite", "signs", NodeName, "xplevel").setValue(Xplevelnumber);
 			xpshoplite.plugin.save();
 			text.set(sign.lines().set(0, Text.of(TextColors.RED, "XP SHOP LITE")));
 			sign.offer(text);
@@ -62,7 +62,7 @@ public class createevent
 			sign.offer(text);
 			text.set(sign.lines().set(3, Text.of("Xp level: " + Xplevelnumber)));
 			sign.offer(text);
-			xpshoplite.plugin.getLogger().info("Sign xpshop lite set");
+			xpshoplite.plugin.getLogger().info("Sign Xpshop Lite set");
 		}
 	}
 }
