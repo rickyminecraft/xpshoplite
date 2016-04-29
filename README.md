@@ -23,6 +23,13 @@ If you left click the sign you buy Xp
 If you right click the sign you sell Xp
 ```
 
+# commands
+
+```
+xpshoplite
+xpshoplite reload
+```
+
 # permissions
 
 ```

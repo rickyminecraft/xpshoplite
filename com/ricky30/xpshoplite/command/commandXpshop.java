@@ -23,6 +23,11 @@ public class commandXpshop implements CommandExecutor
 		src.sendMessage(Text.of("--------------------"));
 		src.sendMessage(Text.of("if you left click you buy Xp"));
 		src.sendMessage(Text.of("if you right click you sell Xp"));
+		src.sendMessage(Text.of("--------------------"));
+		src.sendMessage(Text.of("command :"));
+		src.sendMessage(Text.of("xpshoplite"));
+		src.sendMessage(Text.of("xpshoplite reload"));
+		
 		return CommandResult.success();
 	}
 }
