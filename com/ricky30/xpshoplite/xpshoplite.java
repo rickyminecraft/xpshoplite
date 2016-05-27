@@ -28,7 +28,7 @@ import ninja.leaping.configurate.ConfigurationNode;
 import ninja.leaping.configurate.commented.CommentedConfigurationNode;
 import ninja.leaping.configurate.loader.ConfigurationLoader;
 
-@Plugin(id = "com.ricky30.xpshoplite", name = "xpshoplite", version = "1.0")
+@Plugin(id = "com.ricky30.xpshoplite", name = "xpshoplite", version = "1.0.1")
 public class xpshoplite
 {
 	private EconomyService service = null;
